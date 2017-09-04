@@ -1,0 +1,40 @@
+body, html {
+	background-color: #E1CF9B;
+}
+
+.logo-container {
+	padding-left: 30%;
+	padding-right: 30%;
+	margin-top: 2em;
+}
+
+.logo {
+	width: 100%;
+	background-color: #ffffff;
+}
+
+.language-box {
+	width:100%;
+	margin-top: 0.5em;
+	white-space: nowrap;
+	display: block;
+}
+
+.language-button {
+	width: 49%;
+	height: 3em;
+	font-size: 1.4em;
+	color: white;
+	text-align: center;
+	background: #9f0b1e;
+	border: 0;
+	cursor: pointer;
+}
+
+.right-button {
+	float: right;
+}
+
+.left-button {
+	float:left;
+}
