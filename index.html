@@ -1,6 +1,35 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="index.css">
 
+	<script type="text/javascript">
+
+		function getParameterByName(name, url) {
+		    if (!url) url = window.location.href;
+		    name = name.replace(/[\[\]]/g, "\\$&");
+		    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+		        results = regex.exec(url);
+		    if (!results) return null;
+		    if (!results[2]) return '';
+		    return decodeURIComponent(results[2].replace(/\+/g, " "));
+		}
+
+		function chooseLanguage(lang) {
+			localStorage['lang'] = lang;
+			switch(lang) {
+				case 'en':
+					window.location.href='en/index.html'
+					break;
+				case 'fr':
+					window.location.href='fr/index.html'
+					break
+			}
+		}
+
+		if (!getParameterByName('choose_lang')) {
+			chooseLanguage(localStorage['lang'])
+		}
+	</script>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
@@ -8,8 +37,8 @@
 	<div class="logo-container">
 		<img class="logo" src="assets/logo.png">
 		<div class="language-box">
-			<button onclick="window.location.href='fr/index.html'" class="language-button left-button">Fran&ccedil;ais</button>
-			<button onclick="window.location.href='en/index.html'" class="language-button right-button">English</button>
+			<button onclick="chooseLanguage('fr')" class="language-button left-button">Fran&ccedil;ais</button>
+			<button onclick="chooseLanguage('en')" class="language-button right-button">English</button>
 		</div>
 	</div>
 </body>
