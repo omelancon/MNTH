@@ -9,7 +9,8 @@ header {
 	position: relative;
 	padding: 0.5em;
 	margin-bottom: 0;
-	display: block;
+	display: flex;
+	justify-content: center;
 	box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	-webkit-box-sizing:border-box;
@@ -22,25 +23,68 @@ footer {
 	background-color: #E1CF9B;
 	box-shadow: 0px 500px 0px 500px #E1CF9B;
 	padding: 0.5em;
-	box-sizing:border-box;  /** add this **/
-	-moz-box-sizing:border-box; /** add this **/
-	-webkit-box-sizing:border-box; /** add this **/
-	-ms-box-sizing:border-box; /** add this **/
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-ms-box-sizing:border-box;
 }
 
 .header-logo {
 	padding: 5px;
-	background-color: white;
+	max-height: 2em;
+}
+
+.header-title {
+	font-size: 3vw;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.language-box {
+	margin-left: auto;
+	margin-right: 0;
+	font-size: 1em;
+}
+
+.language-box-element, a {
+	color: #000000;
+	text-decoration-color: #000000;
 }
 
 .main-container {
-	margin-top: 0;
-	margin-right: 10%;
-	margin-left: 10%;
+	margin-top: 0.5em;
+	margin-right: 2em;
+	margin-left: 2em;
 	padding: 2em;
 	padding-top: 1em;
-	background-color: beige;
 	min-height: 60%;
+}
+
+.sub-container {
+	background-color: beige;
+	padding: 2em;
+	padding-bottom: 1em;
+	margin-bottom: 2em;
+}
+
+.sub-container p {
+	margin-top: 2em;
+}
+
+.sub-container h1 {
+	border-bottom: 1px solid #000; 
+	line-height: 0.1em;
+	margin-top: 0;
+	text-align: center;
+}
+
+.sub-container h1 span {
+	background-color: beige;
+}
+
+.sub-container img {
+	width: 100%;
 }
 
 .text {
@@ -50,10 +94,11 @@ footer {
 	white-space: -o-pre-wrap;    /* Opera 7 */
 	word-wrap: break-word;       /* Internet Explorer 5.5+ */
 	text-align: justify;
+	text-justify: inter-word;
 }
 
 .social-footer {
-	float:right;
+	float: right;
 	width: 6em;
 	border-right: 1px solid #49311d;
 	border-left: 1px solid #49311d;
@@ -66,17 +111,7 @@ footer {
 	text-decoration: none;
 }
 
-.language-box {
-	float: right;
-	font-size: 1.5em;
-}
-
-.language-box-element, a {
-	color: #000000;
-	text-decoration-color: #000000;
-}
-
-.disabled {
+a.disabled {
     pointer-events: none;
     cursor: default;
     opacity: 0.3;
