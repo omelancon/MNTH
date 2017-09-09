@@ -1,6 +1,6 @@
 <head>
 	<title>MNTH</title>
-	<link rel="shortcut icon" href="../assets/logo_small.ico" /> 
+	<link rel="shortcut icon" href="./assets/logo_small.ico" /> 
 	<link rel="stylesheet" type="text/css" href="index.css">
 
 	<script type="text/javascript">
@@ -15,8 +15,19 @@
 		    return decodeURIComponent(results[2].replace(/\+/g, " "));
 		}
 
+		function langDateIsValid() {
+			if (localStorage.langDate) {
+				const cachedDate = new Date(JSON.parse(localStorage.langDate))
+				return new Date() - cachedDate < 1000 * 3600 * 24
+
+			} else {
+				return false
+			}
+		}
+
 		function chooseLanguage(lang) {
-			localStorage['lang'] = lang;
+			localStorage.lang = lang;
+			localStorage.langDate = JSON.stringify(new Date());
 			switch(lang) {
 				case 'en':
 					window.location.href='en/index.html'
@@ -27,8 +38,8 @@
 			}
 		}
 
-		if (!getParameterByName('choose_lang')) {
-			chooseLanguage(localStorage['lang'])
+		if (!getParameterByName('choose_lang') && langDateIsValid()) {
+			chooseLanguage(localStorage.lang)
 		}
 	</script>
 
@@ -37,10 +48,11 @@
 
 <body>
 	<div class="logo-container">
-		<img class="logo" src="assets/logo.png">
+		<img class="logo" src="assets/logo_no_border.png">
 		<div class="language-box">
-			<button onclick="chooseLanguage('fr')" class="language-button left-button">Fran&ccedil;ais</button>
-			<button onclick="chooseLanguage('en')" class="language-button right-button">English</button>
+			<a onclick="chooseLanguage('fr')" class="language-button left-button">Fran&ccedil;ais</a>
+			<span class="language-delimiter">|</span>
+			<a onclick="chooseLanguage('en')" class="language-button right-button">English</a>
 		</div>
 	</div>
 </body>

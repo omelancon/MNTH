@@ -1,40 +1,47 @@
 body, html {
-	background-color: #E1CF9B;
+	background-color: #ffffff;
 }
 
 .logo-container {
-	padding-left: 30%;
-	padding-right: 30%;
+	padding-left: 35%;
+	padding-right: 35%;
 	margin-top: 2em;
 }
 
 .logo {
 	width: 100%;
-	background-color: #ffffff;
 }
 
 .language-box {
+	display: inline-block;
 	width:100%;
-	margin-top: 0.5em;
+	margin-top: 1em;
 	white-space: nowrap;
 	display: block;
+	text-align: center;
 }
 
 .language-button {
-	width: 49%;
-	height: 3em;
-	font-size: 1.4em;
-	color: white;
+	font-weight: bold;
+	font-size: 1em;
+	color: black;
 	text-align: center;
-	background: #9f0b1e;
 	border: 0;
 	cursor: pointer;
 }
 
+.language-button:hover {
+	color: #e1071d;
+}
+
+.language-delimiter {
+	padding-right: 0.5em;
+	padding-left: 0.5em;
+
+}
+
 .right-button {
-	float: right;
 }
 
 .left-button {
-	float:left;
 }

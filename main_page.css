@@ -1,3 +1,8 @@
+@font-face {
+	font-family: "Linux Libertine";
+	src: url("./assets/LinLibertine_R.ttf") format("truetype");
+}
+
 html, body {
 	margin: 0;
 	padding: 0;
@@ -5,12 +10,11 @@ html, body {
 
 header {
 	width: 100%;
-	background: #9f0b1e;
+	height: 8em;
+	background: brown;
 	position: relative;
-	padding: 0.5em;
 	margin-bottom: 0;
-	display: flex;
-	justify-content: center;
+	display: inline-block;
 	box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	-webkit-box-sizing:border-box;
@@ -30,11 +34,30 @@ footer {
 }
 
 .header-logo {
-	padding: 5px;
-	max-height: 2em;
+	padding: 2em 1em 2em 1em;
+	height: 4em;
+	float: left;
+}
+
+.header-content {
+	display: block;
+}
+
+.header-content-top {
+	height: 3em;
+	display: block;
+	margin-left: 180px;
+}
+
+.header-content-bottom {
+	height: 5em;
+	display: block;
+	background-color: #e1071d;;
+	margin-left: 180px;
 }
 
 .header-title {
+	font-family: "Linux Libertine";
 	font-size: 3vw;
 	position: absolute;
 	margin-left: auto;
@@ -42,14 +65,15 @@ footer {
 }
 
 .language-box {
-	margin-left: auto;
-	margin-right: 0;
+	float: right;
+	padding: 0.5em;
 	font-size: 1em;
+	color: #ffffff;
 }
 
 .language-box-element, a {
-	color: #000000;
-	text-decoration-color: #000000;
+	color: #ffffff;
+	text-decoration-color: #ffffff;
 }
 
 .main-container {
@@ -62,7 +86,7 @@ footer {
 }
 
 .sub-container {
-	background-color: beige;
+	background-color: white;
 	padding: 2em;
 	padding-bottom: 1em;
 	margin-bottom: 2em;
@@ -80,7 +104,7 @@ footer {
 }
 
 .sub-container h1 span {
-	background-color: beige;
+	background-color: white;
 }
 
 .sub-container img {
@@ -97,11 +121,13 @@ footer {
 	text-justify: inter-word;
 }
 
-.social-footer {
-	float: right;
+.social-links {
+	vertical-align: middle;
+	display: inline-block;
+	padding: 0.3em;
 	width: 6em;
-	border-right: 1px solid #49311d;
-	border-left: 1px solid #49311d;
+	border-right: 1px solid #ffffff;
+	border-left: 1px solid #ffffff;
 	text-align: center;
 	margin-right: 2em;
 }
